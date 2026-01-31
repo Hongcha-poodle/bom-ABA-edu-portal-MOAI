@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  /* indigo-50 */
+  --color-primary-500: #6366f1;
+  /* indigo-500 */
+  --color-primary-DEFAULT: #6366f1;
+
+  --color-secondary-500: #ec4899;
+  /* pink-500 */
+  --color-secondary-DEFAULT: #ec4899;
+
+  --color-info: #3b82f6;
+  /* blue-500 */
+
+  --color-success: #22c55e;
+  /* green-500 */
+
+  --color-neutral-50: #f8fafc;
+  /* slate-50 */
+  --color-neutral-800: #1e293b;
+  /* slate-800 */
+}
+
+/* 
+  If I use @theme here, I might not need tailwind.config.ts theme extension.
+  However, v4 also supports tailwind.config.ts, but CSS theme is preferred.
+  I will define the theme variables here to ensure they work.
+  The class names like bg-primary-500 will map to --color-primary-500.
+*/
+
+@layer base {
+  :root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  }
+}
