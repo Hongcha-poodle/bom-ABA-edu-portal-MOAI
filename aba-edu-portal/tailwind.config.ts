@@ -58,7 +58,9 @@ const config: Config = {
         error: "#E08080",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui"],
+        display: ["Outfit", "ui-sans-serif", "system-ui"],
+        body: ["DM Sans", "ui-sans-serif", "system-ui"],
+        sans: ["DM Sans", "ui-sans-serif", "system-ui"],
       },
       borderRadius: {
         "4xl": "2rem",
