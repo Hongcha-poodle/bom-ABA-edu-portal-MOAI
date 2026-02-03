@@ -30,22 +30,22 @@ export const Button = forwardRef<any, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      "inline-flex items-center justify-center rounded-2xl font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-300 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none shadow-soft hover:shadow-soft-lg";
+      "inline-flex items-center justify-center rounded-full font-bold tracking-wide transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-300 disabled:opacity-50 disabled:pointer-events-none hover:-translate-y-1";
 
     const variants = {
-      primary: "bg-primary-500 text-white hover:bg-primary-600",
-      secondary: "bg-secondary-500 text-white hover:bg-secondary-600",
+      primary: "bg-gradient-to-br from-primary-400 to-primary-600 text-white hover:from-primary-500 hover:to-primary-700",
+      secondary: "bg-gradient-to-br from-secondary-300 to-secondary-500 text-neutral-900 hover:from-secondary-400 hover:to-secondary-600",
       outline:
-        "border-2 border-neutral-300 bg-transparent hover:bg-neutral-100 text-neutral-700 hover:border-neutral-400 shadow-none hover:shadow-soft",
-      white: "bg-white text-primary-600 hover:bg-neutral-50",
-      soft: "bg-primary-100 text-primary-700 hover:bg-primary-200 shadow-none hover:shadow-soft",
-      accent: "bg-accent-500 text-white hover:bg-accent-400",
+        "border-3 border-primary-400 bg-white hover:bg-primary-50 text-primary-600 hover:border-primary-500",
+      white: "bg-white text-neutral-800 hover:bg-neutral-50 border-2 border-neutral-300",
+      soft: "bg-accent-200 text-neutral-900 hover:bg-accent-300",
+      accent: "bg-gradient-to-br from-accent-300 to-accent-400 text-neutral-900 hover:from-accent-400 hover:to-accent-500",
     };
 
     const sizes = {
       sm: "h-9 px-4 text-sm",
-      md: "h-11 px-5 py-2",
-      lg: "h-13 px-7 text-lg",
+      md: "h-11 px-5 py-2 text-sm",
+      lg: "h-12 px-7 text-base",
     };
 
     const classes = cn(baseStyles, variants[variant], sizes[size], className);

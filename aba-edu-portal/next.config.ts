@@ -11,8 +11,13 @@ const nextConfig: NextConfig = {
       process.env.NODE_ENV === "production" && process.env.VERCEL !== "1",
     // Define allowed image formats
     formats: ["image/avif", "image/webp"],
-    // Remote patterns for external images (if needed in the future)
-    remotePatterns: [],
+    // Remote patterns for external images (Unsplash dummy images)
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
   },
 
   // Disable x-powered-by header for security

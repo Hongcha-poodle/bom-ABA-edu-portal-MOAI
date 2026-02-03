@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink, Sparkles } from "lucide-react";
+import Image from "next/image";
 import { Button } from "../shared/Button";
 import { useState } from "react";
 
@@ -8,32 +9,19 @@ export function ToolsPreview() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="relative bg-gradient-to-br from-neutral-50 via-white to-primary-50/30 px-4 py-20 md:px-8 md:py-24">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-[0.015]">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F2845C' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-      </div>
+    <section className="relative bg-[#99F6D4] px-4 py-20 md:px-8 md:py-24">
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-12 text-center">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-accent-100 px-4 py-1.5">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5">
             <span className="text-xl">🎮</span>
-            <span
-              className="text-sm font-semibold text-accent-700"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
+            <span className="text-xs font-semibold text-neutral-700 tracking-wide">
               학습 도구
             </span>
           </div>
           <h2
-            className="text-3xl font-bold text-neutral-800 md:text-4xl"
-            style={{ fontFamily: "var(--font-display)" }}
+            className="text-3xl font-semibold text-neutral-800 md:text-4xl"
           >
             아이와 함께 사용할 수 있는 교육 도구
           </h2>
@@ -44,41 +32,29 @@ export function ToolsPreview() {
 
         {/* Featured Tool Card */}
         <div
-          className="overflow-hidden rounded-3xl bg-gradient-to-br from-primary-500 via-accent-500 to-secondary-500 shadow-soft-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 lg:grid lg:grid-cols-2"
+          className="overflow-hidden rounded-3xl bg-white border-2 border-white transition-all duration-500 hover:-translate-y-1 lg:grid lg:grid-cols-2"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Visual Area */}
-          <div className="relative h-80 w-full overflow-hidden bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm lg:h-auto">
-            {/* Decorative elements */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative">
-                {/* Floating keyboard illustration */}
-                <div
-                  className="text-9xl transition-transform duration-700 ease-out"
-                  style={{
-                    transform: isHovered
-                      ? "scale(1.1) rotate(2deg)"
-                      : "scale(1) rotate(0deg)",
-                  }}
-                >
-                  ⌨️
-                </div>
+          <div className="relative h-80 w-full overflow-hidden bg-neutral-900/10 lg:h-auto">
+            <Image
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80"
+              alt="학습 도구 미리보기"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 ease-out"
+              style={{
+                transform: isHovered
+                  ? "scale(1.05)"
+                  : "scale(1)",
+              }}
+            />
 
-                {/* Sparkle effects */}
-                <div className="absolute -top-6 -right-6 text-4xl animate-float">
-                  ✨
-                </div>
-                <div
-                  className="absolute -bottom-6 -left-6 text-3xl animate-float"
-                  style={{ animationDelay: "0.5s" }}
-                >
-                  ⭐
-                </div>
-              </div>
-            </div>
+            {/* Soft overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-neutral-900/10 to-transparent" />
 
-            {/* Grid pattern overlay */}
+            {/* Subtle pattern */}
             <div
               className="absolute inset-0 opacity-10"
               style={{

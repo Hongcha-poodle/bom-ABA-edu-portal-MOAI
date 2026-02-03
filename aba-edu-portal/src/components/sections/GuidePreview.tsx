@@ -2,9 +2,9 @@
 
 import { BookOpen, Home, HelpCircle, ArrowRight } from "lucide-react";
 import { Button } from "../shared/Button";
-import { SectionHeader } from "../shared/SectionHeader";
 import { GUIDE_ITEMS } from "@/lib/constants";
 import { useState } from "react";
+import Image from "next/image";
 
 const ICON_MAP = {
   BookOpen: BookOpen,
@@ -14,34 +14,45 @@ const ICON_MAP = {
 
 export function GuidePreview() {
   return (
-    <section className="relative bg-gradient-to-b from-white via-secondary-50/30 to-accent-50/20 px-4 py-20 md:px-8 md:py-24">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-32 left-20 h-48 w-48 rounded-full bg-secondary-200/20 blur-3xl" />
-        <div className="absolute bottom-20 right-20 h-56 w-56 rounded-full bg-accent-200/20 blur-3xl" />
-      </div>
+    <section className="relative bg-[#E0F2FE] px-4 py-20 md:px-8 md:py-24">
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="mb-12 text-center">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-secondary-100 px-4 py-1.5">
-            <span className="text-xl">📖</span>
-            <span
-              className="text-sm font-semibold text-secondary-700"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              입문 가이드
-            </span>
+        <div className="mb-12 grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div>
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5">
+              <span className="text-xl">📖</span>
+              <span className="text-xs font-semibold text-neutral-700 tracking-wide">
+                입문 가이드
+              </span>
+            </div>
+            <h2 className="text-3xl font-semibold text-neutral-800 md:text-4xl">
+              처음 시작하는 분들을 위한 단계별 안내
+            </h2>
+            <p className="mt-3 text-lg text-neutral-600 max-w-2xl">
+              ABA 교육의 기초부터 실전 적용까지, 체계적인 가이드를 따라가세요
+            </p>
           </div>
-          <h2
-            className="text-3xl font-bold text-neutral-800 md:text-4xl"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            처음 시작하는 분들을 위한 단계별 안내
-          </h2>
-          <p className="mt-3 text-lg text-neutral-600 max-w-2xl mx-auto">
-            ABA 교육의 기초부터 실전 적용까지, 체계적인 가이드를 따라가세요
-          </p>
+
+          <div className="overflow-hidden rounded-3xl bg-white border-2 border-white">
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1200&q=80"
+                alt="가이드 미리보기"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="p-5">
+              <p className="text-xs uppercase tracking-widest text-neutral-500">
+                필독 자료
+              </p>
+              <h3 className="mt-2 text-lg font-semibold text-neutral-800">
+                가정에서 바로 쓰는 ABA 핵심 노트
+              </h3>
+            </div>
+          </div>
         </div>
 
         {/* Guide Cards */}

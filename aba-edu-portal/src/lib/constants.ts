@@ -6,7 +6,8 @@ export const MAGAZINE_ITEMS: MagazineItem[] = [
     title: "강화물 선택, 이렇게 하면 쉬워요",
     summary: "아이가 좋아하는 강화물을 찾는 5가지 방법",
     category: "카드뉴스",
-    thumbnail: "/placeholder.svg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80",
     date: "2025.01.20",
     href: "/magazine/reinforcement-guide",
   },
@@ -15,7 +16,8 @@ export const MAGAZINE_ITEMS: MagazineItem[] = [
     title: '"안 해!" 대처법 만화',
     summary: "거부 행동에 현명하게 대응하는 방법",
     category: "만화",
-    thumbnail: "/placeholder.svg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1200&q=80",
     date: "2025.01.18",
     href: "/magazine/no-response-comic",
   },
@@ -24,7 +26,8 @@ export const MAGAZINE_ITEMS: MagazineItem[] = [
     title: "가정에서 하는 5분 ABA 놀이",
     summary: "바쁜 일상 속 짧은 시간 활용법",
     category: "아티클",
-    thumbnail: "/placeholder.svg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80",
     date: "2025.01.15",
     href: "/magazine/5min-aba-play",
   },
@@ -33,7 +36,8 @@ export const MAGAZINE_ITEMS: MagazineItem[] = [
     title: "ABA 기본 용어 한눈에 보기",
     summary: "처음 접하는 분들을 위한 용어 정리",
     category: "인포그래픽",
-    thumbnail: "/placeholder.svg",
+    thumbnail:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
     date: "2025.01.12",
     href: "/magazine/aba-terms",
   },

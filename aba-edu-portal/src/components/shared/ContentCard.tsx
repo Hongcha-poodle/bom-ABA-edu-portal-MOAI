@@ -16,10 +16,10 @@ export function ContentCard({ item, index = 0 }: ContentCardProps) {
 
   // 각 카드에 다른 색상 악센트 적용
   const accentColors = [
-    "from-primary-500/10 to-primary-500/5",
-    "from-secondary-500/10 to-secondary-500/5",
-    "from-accent-500/10 to-accent-500/5",
-    "from-primary-400/10 to-secondary-400/5",
+    "from-primary-300/20 to-primary-400/10",
+    "from-secondary-300/20 to-secondary-400/10",
+    "from-accent-300/20 to-accent-400/10",
+    "from-tertiary-300/20 to-tertiary-400/10",
   ];
 
   const hoverShadows = [
@@ -40,18 +40,7 @@ export function ContentCard({ item, index = 0 }: ContentCardProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <article
-        className={`
-          relative flex h-full flex-col overflow-hidden rounded-3xl bg-white
-          border border-neutral-200/50
-          transition-all duration-500 ease-out
-          hover:-translate-y-3 hover:scale-[1.02]
-          ${hoverShadow}
-        `}
-        style={{
-          boxShadow: isHovered
-            ? "0 20px 60px -15px rgba(0, 0, 0, 0.15), 0 10px 30px -10px rgba(0, 0, 0, 0.1)"
-            : "0 4px 15px -3px rgba(0, 0, 0, 0.07)",
-        }}
+        className="relative flex h-full flex-col overflow-hidden rounded-[2rem] bg-white border-2 border-neutral-200/80 transition-all duration-500 ease-out hover:-translate-y-4 hover:scale-[1.03] hover:border-primary-300"
       >
         {/* Thumbnail Area with Gradient Overlay */}
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-neutral-100">
@@ -66,20 +55,20 @@ export function ContentCard({ item, index = 0 }: ContentCardProps) {
             style={{ opacity: isHovered ? 0.3 : 1 }}
           />
 
-          {/* Icon or illustration placeholder */}
-          <div className="relative flex h-full w-full items-center justify-center">
-            <div className="relative transform transition-transform duration-500 group-hover:scale-110">
-              <span
-                className="text-7xl transition-all duration-500 filter group-hover:brightness-110"
-                style={{
-                  filter: isHovered
-                    ? "drop-shadow(0 10px 20px rgba(0, 0, 0, 0.15))"
-                    : "none",
-                }}
-              >
-                {getCategoryIcon(item.category)}
-              </span>
-            </div>
+          {/* Thumbnail Image */}
+          <Image
+            src={item.thumbnail}
+            alt={item.title}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            priority={index < 2}
+          />
+
+          {/* Category icon overlay */}
+          <div className="absolute bottom-4 right-4 rounded-full bg-white/90 px-4 py-2 text-sm font-bold shadow-lg backdrop-blur border-2 border-white/50">
+            <span className="mr-1.5 text-base">{getCategoryIcon(item.category)}</span>
+            <span className="text-neutral-800">{item.category}</span>
           </div>
 
           {/* Subtle grain texture overlay */}
@@ -100,22 +89,22 @@ export function ContentCard({ item, index = 0 }: ContentCardProps) {
 
           {/* Title */}
           <h3
-            className="mb-3 text-xl font-bold leading-snug text-neutral-800 transition-colors duration-300 group-hover:text-primary-600"
+            className="mb-3 text-2xl font-black leading-snug text-neutral-900 transition-colors duration-300 group-hover:text-primary-500"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {item.title}
           </h3>
 
           {/* Summary */}
-          <p className="mb-4 line-clamp-3 flex-1 text-sm leading-relaxed text-neutral-600">
+          <p className="mb-4 line-clamp-3 flex-1 text-base leading-relaxed text-neutral-700">
             {item.summary}
           </p>
 
           {/* Read more indicator */}
-          <div className="flex items-center gap-2 text-sm font-semibold text-primary-600 transition-all duration-300 group-hover:gap-3">
+          <div className="flex items-center gap-2 text-base font-bold text-primary-500 transition-all duration-300 group-hover:gap-4">
             <span>자세히 보기</span>
             <svg
-              className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+              className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-2"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -123,7 +112,7 @@ export function ContentCard({ item, index = 0 }: ContentCardProps) {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={3}
                 d="M9 5l7 7-7 7"
               />
             </svg>
