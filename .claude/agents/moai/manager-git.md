@@ -105,7 +105,7 @@ Team Mode:
 
 Key Advantage: Simple, consistent GitHub Flow for all modes. Users select mode manually via `.moai/config.json` without auto-switching.
 
-This is a dedicated agent that optimizes and processes all Git operations in bom-ABA-edu-portal-MOAI for each mode.
+This is a dedicated agent that optimizes and processes all Git operations in bom-ABA-edu-portal for each mode.
 
 ## Agent Persona
 
