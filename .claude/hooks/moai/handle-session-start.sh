@@ -16,13 +16,13 @@ if command -v moai &> /dev/null; then
 fi
 
 # Try detected Go bin path from initialization
-if [ -f "/Users/junan/go/bin/moai" ]; then
-	exec "/Users/junan/go/bin/moai" hook session-start < "$temp_file"
+if [ -f "C:/Users/Rich/go/bin/moai" ]; then
+	exec "C:/Users/Rich/go/bin/moai" hook session-start < "$temp_file"
 fi
 
 # Try default ~/go/bin/moai
-if [ -f "/Users/junan/go/bin/moai" ]; then
-	exec "/Users/junan/go/bin/moai" hook session-start < "$temp_file"
+if [ -f "C:/Users/Rich/go/bin/moai" ]; then
+	exec "C:/Users/Rich/go/bin/moai" hook session-start < "$temp_file"
 fi
 
 # Not found - exit silently (Claude Code handles missing hooks gracefully)
